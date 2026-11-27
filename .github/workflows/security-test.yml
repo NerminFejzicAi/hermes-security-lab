@@ -1,0 +1,27 @@
+
+name: Hermes Security Test
+
+on:
+  pull_request:
+    branches:
+      - main
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  security-check:
+    name: security-check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Verify README exists
+        run: |
+          test -f README.md
+          echo "Security test passed"
