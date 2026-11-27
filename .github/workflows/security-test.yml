@@ -23,5 +23,5 @@ jobs:
 
       - name: Verify README exists
         run: |
-          test -f README.md
+          test -f README_DOES_NOT_EXIST.md
           echo "Security test passed"
